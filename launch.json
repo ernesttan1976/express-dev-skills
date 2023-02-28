@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Express",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": ["--inspect"],
+      "args": ["${workspaceFolder}/ernesttan/u2/u2d2/express-dev-skills/bin/www"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug node file",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/${file}",
+      "skipFiles": ["<node_internals>/**"],
+      "stopOnEntry": true,
+      "smartStep": true
+    }
+  ]
+}

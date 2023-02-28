@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript"> const skillsData =<%-JSON.stringify(skills)%></script>
+    <script type="text/javascript" src="../javascripts/index.js" defer></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div id="root"></div>
+  </body>
+</html>
+
