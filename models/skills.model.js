@@ -5,7 +5,7 @@ let skills=[
     skill: "HTML",
     description: "The markup language used to create the structure of web pages."
 },
-{
+{ 
     skill: "CSS",
     description: "The language used to style the appearance of web pages."
 },

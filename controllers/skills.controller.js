@@ -6,7 +6,7 @@ function index(req, res) {
     const context={title, skills:getAll()};
     res.render('skills/index',context);
   }
-
+ 
 function show(req,res){
   const title = "Web Developer Skills and Concepts";
   //console.log(req.params.id);

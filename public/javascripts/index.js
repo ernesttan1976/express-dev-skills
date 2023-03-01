@@ -10,4 +10,4 @@ skillsData.forEach(skill=>{
     details.appendChild(summary);
     details.appendChild(p);
     root.appendChild(details);
-});
+}); 

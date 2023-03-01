@@ -13,3 +13,4 @@ router.get('/:id', skillsController.show);
 router.get('/', skillsController.index);
 
 module.exports = router;
+ 
