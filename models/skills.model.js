@@ -1,6 +1,6 @@
 
 
-const skills=[
+let skills=[
 {
     skill: "HTML",
     description: "The markup language used to create the structure of web pages."
@@ -66,4 +66,26 @@ const skills=[
     description: "Web applications that provide a native app-like experience on mobile devices by using web technologies and features such as offline support and push notifications."
 }];
 
-module.exports={skills};
+function getAll(){
+    return skills;
+}
+
+function getOne(id){
+    return skills[id];
+}
+
+function addSkill({...skill}){
+    skills.push(skill);
+    return;
+}
+
+function getCount(){
+    return skills.length;
+}
+
+function deleteSkillData(id){
+    skills.splice(id,1);
+    return skills;
+}
+
+module.exports={getAll, getOne, addSkill, getCount, deleteSkillData};

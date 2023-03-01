@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/skills/new" method="get">
+      <button type="submit" >New Skill</button>
+    </form>
+    <div id="root"><% skills.map(skill=>{ %>
+      <details>
+        <summary><%- skill.skill %></summary>
+        <%- skill.description %>
+      </details>
+    <% }); %></div>
+    
+  </body>
+</html>
+
