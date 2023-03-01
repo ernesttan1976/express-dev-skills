@@ -88,4 +88,10 @@ function deleteSkillData(id){
     return skills;
 }
 
-module.exports={getAll, getOne, addSkill, getCount, deleteSkillData};
+function editSkillData(id, {skill, description}){
+    const skillItem = {skill, description};
+    skills[id]=skillItem;
+    return skillItem;
+}
+
+module.exports={getAll, getOne, addSkill, getCount, deleteSkillData, editSkillData};

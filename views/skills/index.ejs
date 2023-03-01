@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <form action="/skills/new" method="get">
-      <button type="submit" >New Skill</button>
-    </form>
-    <div id="root"><% skills.map((skill,i)=>{ %>
-      <details>
-        <summary><%- skill.skill %> <form action='/skills/<%= i %>?_method=DELETE' class="delete-form" method="POST"><button type="submit">X</button></form> </summary>
-        <%- skill.description %>
-      </details>
-    <% }); %></div>
-    
-  </body>
-</html>
+    <head>
+        <title><%= title %></title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="/stylesheets/reset.css">
+        <link
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <!-- <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css"> -->
+        <link rel='stylesheet' href='/stylesheets/style.css'/>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form action="/skills/new" method="get">
+            <button class="new-btn" type="submit">New Skill</button>
+        </form>
+
+        <!-- <div class="col s12 m6"> -->
+            <div class="row">
+
+            <% skills.map((skill,i)=>{ %>
+                <div class="card white-blue darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title blue-text"><%- skill.skill %></span>
+                    </div>
+                    <div class="card-content">
+                        <p><%- skill.description %></p>
+                    </div>
+                    <div class="card-action">
+                        <form action='/skills/edit/<%= i %>' class="update-form" method="POST">
+                            <button type="submit"><img class="edit-btn" src="/images/edit.svg" alt="edit"/></button>
+                        </form>
+                        <form action='/skills/<%= i %>?_method=DELETE' class="delete-form" method="POST">
+                            <button type="submit" class="delete-btn">X</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </body>
+</html></div></body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/skills/new" method="get">
+      <button type="submit" >New Skill</button>
+    </form>
+    
+    <div id="root"><% skills.map((skill,i)=>{ %>
+      <details>
+        <summary><%- skill.skill %> <form action='/skills/<%= i %>?_method=DELETE' class="delete-form" method="POST"><button type="submit">X</button></form> </summary>
+        <%- skill.description %>
+      </details>
+    <% }); %></div>
+    
+  </body>
+</html>
+

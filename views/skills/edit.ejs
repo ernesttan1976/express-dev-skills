@@ -8,9 +8,9 @@
     </head>
     <body>
         <h1><%= title %></h1>
-        <form action="/skills" method="POST">
+        <form action="/skills/edit/<%= id %>?_method=PUT" method="POST">
             <label for="skill">Skill</label>
-            <input id="skill" type="text" name="skill"></input>
+            <input id="skill" type="text" name="skill" value="<%= skills[0].skill %>"></input>
         <label for="description">Description</label>
-        <input id="description" type="text" name="description"></body>
-</html></input><button type="submit">Submit</button></form><div id="root"></div></body></html>
+        <input id="description" type="text" name="description" value="<%= skills[0].description %>">></body>
+</html></input><button type="submit">Save</button></form><div id="root"></div></body></html>

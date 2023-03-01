@@ -1,4 +1,4 @@
-const {getAll, getOne, addSkill, getCount, deleteSkillData} = require('../models/skills.model');
+const {getAll, getOne, addSkill, getCount, deleteSkillData, editSkillData} = require('../models/skills.model');
 
 function index(req, res) {
     //console.log(skills);
@@ -41,4 +41,19 @@ function deleteSkill(req,res){
   res.redirect('/skills');
 }
 
-module.exports = {index, show, newSkill, newSkill2, deleteSkill};
+function editSkill(req,res){
+  console.log("Form for Edit:", req.params.id);
+  const title = "Edit Skill";
+  const context={title, skills: [getOne(Number(req.params.id))], id: req.params.id};
+  console.log(context);
+  res.render('skills/edit',context);
+}
+
+function editSkill2(req,res){
+  console.log("PUT:", req.params.id);
+  const {skill, description} = req.body;
+  editSkillData(Number(req.params.id), {skill, description});
+  res.redirect('/skills/'+req.params.id);
+}
+
+module.exports = {index, show, newSkill, newSkill2, deleteSkill, editSkill, editSkill2};
